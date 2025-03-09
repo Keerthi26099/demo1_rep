@@ -10,11 +10,7 @@ pipeline {
                 git branch: 'master', url: 'https://github.com/Keerthi26099/demo1_rep.git'
             }
         }
-        stage('Verify Files') {
-            steps {
-                bat 'dir'  // List all files in the workspace
-            }
-        }
+       
         stage('Compile Java Code') {
             steps {
                 bat 'javac Hello.java'  // Compile H.java
