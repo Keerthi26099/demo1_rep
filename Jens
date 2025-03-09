@@ -17,12 +17,12 @@ pipeline {
         }
         stage('Compile Java Code') {
             steps {
-                bat 'javac H.java'  // Compile H.java
+                bat 'javac Hello.java'  // Compile H.java
             }
         }
         stage('Run Java Code') {
             steps {
-                bat 'java H'  // Run the compiled Java program
+                bat 'java Hello'  // Run the compiled Java program
             }
         }
     }
