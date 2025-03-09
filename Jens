@@ -4,21 +4,21 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
-                    sh 'git clone https://github.com/Keerthi26099/demo1_rep.git'
+                    bat 'git clone https://github.com/Keerthi26099/demo1_rep.git'
                 }
             }
         }
         stage('Compile Java Code') {
             steps {
                 script {
-                    sh 'javac Hello.java'
+                    bat 'javac Hello.java'
                 }
             }
         }
         stage('Run Java Code') {
             steps {
                 script {
-                    sh 'java Hello'
+                    bat 'java Hello'
                 }
             }
         }
