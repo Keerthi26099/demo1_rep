@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clone') {
+            steps {
+                git "https://github.com/Keerthi26099/demo1_rep.git"
+            }
+        }
+        stage('Build') {
+            steps {
+                bat 'javac Hello.java'
+            }
+        }
+        stage('Run') {
+            steps {
+                bat 'java Hello'
+            }
+        }
+    }
+}
