@@ -1,21 +1,18 @@
 pipeline {
     agent any
-  
     stages {
-        stage('Clone') {
+        stage('Clone Repository') {
             steps {
-                git branch: 'master', url: 'https://github.com/Keerthi26099/demo1_rep.git'
+                git 'https://github.com/Keerthi26099/demo1_rep.git'
             }
         }
-        stage('Build') {
+        stage('Set Environment and Run Jenkins') {
             steps {
-                bat 'dir' // Check if Hello.java exists
-                bat 'javac -d . Hello.java' // Compiling the Java file
-            }
-        }
-        stage('Run') {
-            steps {
-                bat 'java Hello' // Running the compiled Java class
+                bat '''
+                set PATH=C:\\Program Files\\Java\\jdk-21\\bin;%PATH%
+                cd "C:\\Program Files\\Jenkins"
+                java -jar jenkins.war
+                '''
             }
         }
     }
