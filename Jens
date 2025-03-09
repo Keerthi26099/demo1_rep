@@ -5,10 +5,14 @@ pipeline {
         PATH = "${JAVA_HOME}\\bin;${env.PATH}"
     }
     stages {
-        stage('Check Java') {
+        stage('Compile Java Code') {
             steps {
-                bat 'java -version'
-                bat 'javac -version'
+                bat 'javac H.java'  // Compile H.java
+            }
+        }
+        stage('Run Java Code') {
+            steps {
+                bat 'java H'  // Run the compiled Java program
             }
         }
     }
